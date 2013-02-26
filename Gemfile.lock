@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (4.6.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
