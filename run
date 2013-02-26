@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require './lib/ball_clock'
+require 'trollop'
+
+options = Trollop::options do
+  opt :file, "file with ball count, one per line, 0 is ignored", type: :string
+end
+
+Trollop::die :file, "option not provided" unless options[:file]
+Trollop::die :file, "#{options[:file]} not found" unless File.exist?(options[:file])
+
+file = File.open(options[:file], "r")
+BallClock.new(file)
