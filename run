@@ -11,4 +11,9 @@ Trollop::die :file, "option not provided" unless options[:file]
 Trollop::die :file, "#{options[:file]} not found" unless File.exist?(options[:file])
 
 file = File.open(options[:file], "r")
-BallClock.new(file)
+ball_clock = BallClock.new
+file.each_line do |count|
+  count = count.strip.to_i
+  break if count.to_i == 0
+  puts "#{count} balls cycle after #{ball_clock.ball_cycle_length_for_count(count)} days."
+end
