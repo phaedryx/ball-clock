@@ -1,4 +1,8 @@
-CLOCK
+Example
+=======
+    ./run --file spec/test_data/sample.txt
+
+Clock
 ======
 Tempus et mobilius
 Time and motion
